@@ -1,0 +1,12 @@
+/node_modules/
+.DS_Store
+/.idea
+/.env
+/build/
+npm-debug.log
+/data/
+/docker/**/*.key
+/docker/**/*.crt
+/locale/
+*.sublime-*
+lib/middletier-services/sync-cms/data

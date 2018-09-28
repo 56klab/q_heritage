@@ -1,0 +1,57 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run:
+          name: install
+          command: npm install
+      - run:
+          name: build
+          command: npm run build
+      - run:
+          name: build-app
+          command: npm run build:app
+  test:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: npm test
+  docker-image:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build Docker Image
+          command: |
+            TAG=latest
+            IMAGE=heritage
+            docker build -t $IMAGE:$TAG --build-arg SITE_NAME=$SITE_NAME --build-arg DATO_API_TOKEN=$DATO_API_TOKEN --build-arg SNIPCART_LIVE_API_KEY=$SNIPCART_LIVE_API_KEY --build-arg NPM_TOKEN=$NPM_TOKEN .
+            docker login $DOCKER_REGISTRY -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD
+            docker tag $IMAGE:$TAG $DOCKER_REGISTRY/$IMAGE:$TAG
+            docker push $DOCKER_REGISTRY/$IMAGE:$TAG
+workflows:
+  version: 2
+  build-test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+  build-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - docker-image:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test
