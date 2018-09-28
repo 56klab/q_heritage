@@ -4,7 +4,7 @@
     "dev": "node ./scripts/fragmentTypes.js && node server.js",
     "deploy": "now --public",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=development node server.js",
     "analyze": "ANALYZE=1 next build"
   },
   "dependencies": {
