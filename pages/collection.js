@@ -37,6 +37,7 @@ class Page extends React.Component {
 export const COLLECTION = gql` 
   query collectionDetail($slug: String!) {
   collection(filter: {slug: {eq: $slug}}) {
+    field :testInt, types.Int
     id
     name
     slug
