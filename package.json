@@ -18,11 +18,15 @@
     "@zeit/next-sass": "^0.2.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@zeit/next-typescript": "1.1.0",
 =======
 >>>>>>> parent of 860350e... Update
 =======
 >>>>>>> parent of 860350e... Update
+=======
+    "@zeit/next-typescript": "1.1.0",
+>>>>>>> acb2f9144ee2bf2372b5e5be44aa70db51d3d028
     "apollo-boost": "^0.1.7",
     "apollo-cache-inmemory": "latest",
     "apollo-client": "latest",
