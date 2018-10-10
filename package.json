@@ -17,7 +17,10 @@
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-sass": "^0.2.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@zeit/next-typescript": "1.1.0",
+=======
+>>>>>>> parent of 860350e... Update
 =======
 >>>>>>> parent of 860350e... Update
     "apollo-boost": "^0.1.7",
