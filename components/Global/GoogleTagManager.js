@@ -16,7 +16,8 @@ class GoogleTagManager extends React.Component {
 
     render() {
         const gtm = gtmParts({
-            id: process.env.GOOGLE_TAG_MANAGER_ID || this.props.gtmId,
+            //id: process.env.GOOGLE_TAG_MANAGER_ID || this.props.gtmId,
+            id: 'GTM-ML8GRFD',
             dataLayerName: this.props.dataLayerName || 'dataLayer',
             additionalEvents: this.props.additionalEvents || {},
             previewVariables: this.props.previewVariables || false,

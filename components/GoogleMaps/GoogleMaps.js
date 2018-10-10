@@ -89,7 +89,7 @@ class DefaultProps extends React.Component {
         console.log(process.env.GOOGLE_MAPS_API_KEY);
         return (
             <GoogleMaps
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&v=3.exp`}
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDM5I91fVitHaBbRbFDkL-q-Ubng3vk_gA&v=3.exp`}
                 containerElement={<div className={styles.container}/>}
                 loadingElement={<div className={styles.loader}/>}
                 mapElement={<div className={styles.inner}/>}
