@@ -12,7 +12,6 @@ class Page extends React.Component {
         }
     }
 
-
     static async getInitialProps({query}) {
         const {collection, series, target, shape, frame, type} = query;
         return {collection, series, target, shape, frame, type};
@@ -93,5 +92,3 @@ export const SEO = gql`{
 }`;
 
 export default Page;
-
-
