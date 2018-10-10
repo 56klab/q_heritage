@@ -1,5 +1,5 @@
 const prod = process.env.NODE_ENV === 'development';
-//development or production
+//development or *production
 
 module.exports = {
     'process.env.GOOGLE_TAG_MANAGER_ID': 'GTM-ML8GRFD',
