@@ -5,6 +5,7 @@
   "main": "next.config.js",
   "author": "Quantility",
   "license": "ISC",
+  "repository": "github:Quantility/q_heritage",
   "scripts": {
     "dev": "node ./scripts/fragmentTypes.js && node server.js",
     "deploy": "now --public",
