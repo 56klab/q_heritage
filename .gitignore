@@ -2,7 +2,6 @@
 .DS_Store
 /.idea
 /.env
-/.next
 /build/
 npm-debug.log
 /data/

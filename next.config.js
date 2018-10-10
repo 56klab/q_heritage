@@ -1,8 +1,9 @@
 const path = require('path');
 const withSass = require('@zeit/next-sass');
+const commonsChunkConfig = require('@zeit/next-css/commons-chunk-config');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const {ANALYZE} = process.env;
-const commonsChunkConfig = require('@zeit/next-css/commons-chunk-config');
+
 
 module.exports = withSass({
         cssModules: true,
