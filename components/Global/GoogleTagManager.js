@@ -16,8 +16,8 @@ class GoogleTagManager extends React.Component {
 
     render() {
         const gtm = gtmParts({
-            //id: process.env.GOOGLE_TAG_MANAGER_ID || this.props.gtmId,
-            id: 'GTM-ML8GRFD',
+            /*id: process.env.GOOGLE_TAG_MANAGER_ID || this.props.gtmId,*/
+            id: this.props.gtmId,
             dataLayerName: this.props.dataLayerName || 'dataLayer',
             additionalEvents: this.props.additionalEvents || {},
             previewVariables: this.props.previewVariables || false,
@@ -26,10 +26,25 @@ class GoogleTagManager extends React.Component {
 
         console.log(process.env.GOOGLE_TAG_MANAGER_ID);
 
-        return (
-            {gtm.noScriptAsReact()}
-            {gtm.scriptAsReact()}
+        /*
+        return {
+          <div>
+                {gtm.noScriptAsReact()}</div>
+                <div id={this.props.scriptId || 'react-google-tag-manager-gtm'}>
+                    {gtm.scriptAsReact()}
+                </div>
+            </div>
         );
+        */
+
+      if (isBody) {
+        return gtm.noScriptAsReact();
+      }
+
+      if (isHead) {
+        return gtm.scriptAsReact();
+      }
+
     }
 }
 

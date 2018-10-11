@@ -11,10 +11,11 @@ export default class MyDocument extends Document {
         return (
             <html lang="en">
             <Head>
-                <link rel="stylesheet" href="/_next/static/style.css"/>
-                <GoogleTagManager gtmId={''}/>
+              <GoogleTagManager isHead={true} gtmId='GTM-ML8GRFD'/>
+              <link rel="stylesheet" href="/_next/static/style.css"/>
             </Head>
             <body>
+            <GoogleTagManager isBead={true} gtmId='GTM-ML8GRFD'/>
             <Main/>
             <NextScript/>
             </body>
