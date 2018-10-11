@@ -26,7 +26,7 @@ class GoogleTagManager extends React.Component {
 
         console.log(process.env.GOOGLE_TAG_MANAGER_ID);
 
-        return {gtm.scriptAsReact()}
+        return gtm.scriptAsReact();
       /*(
             <div>
                 <div>{gtm.noScriptAsReact()}</div>
