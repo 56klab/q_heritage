@@ -113,7 +113,7 @@ class ProductOverview extends React.Component {
 }
 
 export const FILTERED_PRODUCTS = gql`
-query allFilteredProducts($collection: [ID], $series: [ID], $target: [ID], $frame: [ID], $shape: [ID], $type: [ID]) {
+query allFilteredProducts($collection: [ItemId], $series: [ItemId], $target: [ItemId], $frame: [ItemId], $shape: [ItemId], $type: [ItemId]) {
 allEyewears(filter: {
     collection: {in: $collection},
     series: {in: $series},
