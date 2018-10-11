@@ -3,8 +3,6 @@ import gtmParts from 'react-google-tag-manager';
 import PropTypes from 'prop-types';
 
 class GoogleTagManager extends React.Component {
-    isBody;
-    isHead;
     componentDidMount() {
         const dataLayerName = this.props.dataLayerName || 'dataLayer';
         const scriptId = this.props.scriptId || 'react-google-tag-manager-gtm';
@@ -18,8 +16,8 @@ class GoogleTagManager extends React.Component {
 
     render() {
         const gtm = gtmParts({
-            /*id: process.env.GOOGLE_TAG_MANAGER_ID || this.props.gtmId,*/
-            id: this.props.gtmId,
+            //id: process.env.GOOGLE_TAG_MANAGER_ID || this.props.gtmId,
+            id: 'GTM-ML8GRFD',
             dataLayerName: this.props.dataLayerName || 'dataLayer',
             additionalEvents: this.props.additionalEvents || {},
             previewVariables: this.props.previewVariables || false,
@@ -28,25 +26,15 @@ class GoogleTagManager extends React.Component {
 
         console.log(process.env.GOOGLE_TAG_MANAGER_ID);
 
-        /*
-        return {
-          <div>
-                {gtm.noScriptAsReact()}</div>
+        return {gtm.scriptAsReact()}
+      /*(
+            <div>
+                <div>{gtm.noScriptAsReact()}</div>
                 <div id={this.props.scriptId || 'react-google-tag-manager-gtm'}>
                     {gtm.scriptAsReact()}
                 </div>
             </div>
-        );
-        */
-
-      if (this.isBody) {
-        return gtm.noScriptAsReact();
-      }
-
-      if (this.isHead) {
-        return gtm.scriptAsReact();
-      }
-
+        );*/
     }
 }
 
