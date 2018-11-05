@@ -27,7 +27,7 @@ class Page extends React.Component {
                             <ParagraphGroup title={name} collection={collection} text={description} split/>
                             <ProductCanvas image={image}/>
                             <ProductFeatures type={model}
-                                             features={{frame: frame, shape: shape, polarized: polarized, frontColour: frontColor, templeColour: templeColor}}/>
+                                             features={{frame: frame, shape: shape, polarized: polarized, frontColor: frontColor, templeColor: templeColor}}/>
                             <ButtonGroup/>
                         </Scroller>
                     </Layout>
