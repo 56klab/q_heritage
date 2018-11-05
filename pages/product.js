@@ -21,13 +21,13 @@ class Page extends React.Component {
             <Query query={EYEWEAR}
                    variables={{slug: slug}}
             >
-                {({loading, data: {eyewear: {name, description, image, collection, model, shape, targetGroup, frame, polarized, seo, frontColour}}}) => (
+                {({loading, data: {eyewear: {name, description, image, collection, model, shape, targetGroup, frame, polarized, seo, frontColor, templeColor}}}) => (
                     <Layout seo={!seo ? {} : seo} isDetail={params}>
                         <Scroller>
                             <ParagraphGroup title={name} collection={collection} text={description} split/>
                             <ProductCanvas image={image}/>
                             <ProductFeatures type={model}
-                                             features={{frame: frame, shape: shape, polarized: polarized, frontColour: frontColour}}/>
+                                             features={{frame: frame, shape: shape, polarized: polarized, frontColour: frontColor, templeColour: templeColor}}/>
                             <ButtonGroup/>
                         </Scroller>
                     </Layout>
@@ -56,7 +56,10 @@ export const EYEWEAR = gql`
     shape {
         name
     }
-    frontColour {
+    frontColor {
+        name
+    }
+    templeColor {
         name
     }
     targetGroup {

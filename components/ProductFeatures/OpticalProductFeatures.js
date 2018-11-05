@@ -3,7 +3,7 @@ import ProductFeature from './ProductFeature';
 import styles from './productFeatures.scss';
 import TitleRevealer from "../TitleRevealer/TitleRevealer";
 
-const ProductFeatures = ({product: {frame, shape, frontColour}}) => (
+const ProductFeatures = ({product: {frame, shape, frontColor, templeColor}}) => (
     <li className={styles.wrapper}>
         <div className={styles.inner}>
             <div className={styles.header}>
@@ -12,7 +12,8 @@ const ProductFeatures = ({product: {frame, shape, frontColour}}) => (
             <div className={styles.body}>
                 <ProductFeature feature={'Frame Shape'} value={shape.name}/>
                 <ProductFeature feature={'Material'} value={frame.name}/>
-                <ProductFeature feature={'Front Color'} value={frontColour.name}/>
+                <ProductFeature feature={'Front Color'} value={frontColor.name}/>
+                <ProductFeature feature={'Temple Color'} value={templeColor.name}/>
             </div>
         </div>
     </li>
